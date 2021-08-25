@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Bubble Concept</title>
+</head>
+
+<body>
+    <h2>Event Bubble Concept</h2>
+    <section id="container">
+        <h4>Event bubble list</h4>
+        <ul id="list-container">
+            <li class="li-item">Lorem, ipsum.</li>
+            <li id="second-li" class="li-item">Doloribus, eaque?</li>
+            <li class="li-item">Ipsa, earum.</li>
+            <li class="li-item">Quas, accusamus!</li>
+            <li class="li-item">Vero, deleniti!</li>
+        </ul>
+    </section>
+
+    <script>
+        document.getElementById('list-container').addEventListener("click", function() {
+            console.log("ul item clicked ");
+        })
+        document.getElementById('container').addEventListener("click", function() {
+            console.log("conatiner item clicked ");
+        })
+        document.getElementById('second-li').addEventListener("click", function() {
+            console.log("second item clicked ");
+            // upper level event will be stop
+            event.stopPropagation();
+
+
+        })
+        document.getElementById('second-li').addEventListener("click", function() {
+            console.log("second2 item clicked ");
+            // same level other event will be stoped by this immidieate propagation
+            // this immediete propagation work for only for after code(ager code kaj korbe ai level er just ai condition er pore same level er gula kaj korbe na)
+            event.stopImmediatePropagation();
+
+
+        })
+        document.getElementById('second-li').addEventListener("click", function() {
+            console.log("second3 item clicked ");
+
+        })
+    </script>
+</body>
+
+</html>

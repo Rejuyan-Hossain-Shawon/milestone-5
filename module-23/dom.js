@@ -1,1 +1,0 @@
-console.log("DOM with js starting this module");

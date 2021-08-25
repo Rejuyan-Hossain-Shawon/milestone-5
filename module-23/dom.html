@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <header>
+        <h1>Welcome to my DOM Blogs</h1>
+    </header>
+    <main>
+        <section id="blogs">
+            <article>
+                <h3>My Blogs -1</h3>
+                <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis sint sapiente exercitationem soluta alias quis, autem repudiandae aut animi itaque veritatis iusto quidem, veniam, consequatur culpa pariatur architecto voluptate quibusdam.</p>
+            </article>
+            <article>
+                <h3>My Blogs -2</h3>
+                <p>Ea maiores est maxime corporis aspernatur saepe similique officia nobis accusamus illum quam optio unde sequi illo labore earum quo repellendus, facere sed sunt repellat doloremque atque porro? Illo, fugit.
+                </p>
+            </article>
+            <article>
+                <h3>My Blogs -3</h3>
+                <p>Est, illum. Itaque porro, accusamus qui minus in molestiae, magnam dicta adipisci, eaque suscipit sunt sapiente officiis nostrum error maxime alias! Sint quae repellendus dolores harum quaerat? Fugiat, pariatur possimus.</p>
+            </article>
+            <article>
+                <h3 id="Fourth-title">My Blogs -4</h3>
+                <p>Atque qui, velit aliquam ex alias, eius sunt aperiam exercitationem quidem ducimus cumque quo nesciunt. Iure, eum aspernatur atque consectetur in accusamus, similique numquam animi modi eveniet dolorem reiciendis temporibus!</p>
+            </article>
+        </section>
+    </main>
+
+    <script>
+        const blogs = document.getElementsByTagName('p');
+        for (const p of blogs) {
+            console.log(p.innerText);
+
+        }
+        const fourthTitle = document.getElementById('Fourth-title');
+        fourthTitle.innerText = " Fourth Title Updated by javaScript";
+        fourthTitle.style.textAlign = "center";
+        fourthTitle.style.fontSize = "30px";
+        fourthTitle.style.color = "red";
+
+
+
+        // appending child in two ways
+        // const blogSection = document.getElementById('blogs');
+        // const article = document.createElement('article');
+        // const h3 = document.createElement('h3');
+        // h3.innerText = "My awesome Blog -5";
+        // const p = document.createElement('p');
+        // p.innerText = "Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis sint sapiente exercitationem soluta alias quis, autem repudiandae aut animi itaque veritatis iusto quidem, veniam, consequatur culpa pariatur architecto voluptate quibusdam.";
+
+
+        // article.appendChild(h3);
+        // article.appendChild(p);
+        // blogSection.appendChild(article);
+
+        // console.log(blogSection);
+
+
+
+        /* 
+        inner html way and simple way
+         */
+        const blogSection = document.getElementById('blogs');
+        const article = document.createElement('article');
+        article.innerHTML = `
+        <h3>My Awesome blog 5 creted in simple way</h3>
+        <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Nobis sint sapiente exercitationem soluta alias quis, autem repudiandae aut animi itaque veritatis iusto quidem, veniam, consequatur culpa pariatur architecto voluptate quibusdam.</p>
+        `;
+        blogSection.appendChild(article);
+
+
+
+
+
+
+
+
+        // style to artcle
+        const articles = document.getElementsByTagName('article');
+        for (const article of articles) {
+            article.style.border = "2px solid black";
+            article.style.padding = "10px";
+            article.style.margin = "5px";
+
+        }
+    </script>
+</body>
+
+</html>

@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Gihtub delete Event </title>
+</head>
+
+<body>
+    <main>
+        <h1>Simple Github Delete Confirmation btn</h1>
+
+        <p id="component">very veyr secret information dont want to show you.dont even try FBI will catch you</p>
+        <input type="text" name="" placeholder=" delete confirmation" id="delete-confimation">
+        <button id="delete-btn" disabled>DELETE</button>
+    </main>
+    <script>
+        document.getElementById("delete-btn").addEventListener("click", function() {
+            document.getElementById("component").style.display = "none";
+        })
+
+        // foucs
+        document.getElementById("delete-confimation").addEventListener("focus", function() {
+                document.body.style.backgroundColor = "lightcoral";
+            })
+            // blur
+        document.getElementById("delete-confimation").addEventListener("blur", function() {
+            document.body.style.backgroundColor = "white";
+        })
+
+
+        // keydown
+        // document.getElementById("delete-confimation").addEventListener("keydown", function() {
+        //     const deleteConfirm = document.getElementById("delete-confimation");
+        //     console.log(deleteConfirm.value);
+        // })
+
+
+        // keypress
+        // document.getElementById("delete-confimation").addEventListener("keypress", function() {
+        //     const deleteConfirm = document.getElementById("delete-confimation");
+        //     console.log(deleteConfirm.value);
+        // })
+
+
+        // keyup
+        document.getElementById("delete-confimation").addEventListener("keyup", function(event) {
+            if (event.target.value == 'delete') {
+                document.getElementById('delete-btn').removeAttribute('disabled');
+            } else {
+                document.getElementById('delete-btn').setAttribute('disabled', true);
+            }
+        })
+
+        // change any kind of change will catch by this if we copy paste then also too
+
+        document.getElementById("delete-confimation").addEventListener("change", function() {
+            const deleteConfirm = document.getElementById("delete-confimation");
+            console.log(deleteConfirm.value);
+        })
+    </script>
+</body>
+
+</html>
